@@ -22,4 +22,4 @@ You may deny camera permission and continue using the app without purchase photo
 
 ## Contact
 
-Before publishing this policy, replace this section with the support email address displayed in the Galaxy Store listing.
+For privacy questions or support, contact: teenytoothbrush@gmail.com
