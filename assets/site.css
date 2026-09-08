@@ -1,0 +1,91 @@
+:root {
+  color-scheme: light;
+  --ink: #123038;
+  --muted-ink: #49646b;
+  --paper: #fcfdfd;
+  --mist: #e7f3f3;
+  --line: #c7dddd;
+  --accent: #087f8c;
+  --accent-dark: #056370;
+  --sun: #e8b84d;
+  --shadow: 0 16px 42px rgb(15 64 70 / 12%);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+a { color: var(--accent-dark); text-underline-offset: 0.18em; }
+a:hover { color: var(--accent); }
+a:focus-visible { outline: 3px solid var(--sun); outline-offset: 4px; }
+
+.container { width: min(100% - 2.5rem, 68rem); margin-inline: auto; }
+
+.skip-link {
+  position: absolute;
+  z-index: 2;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  color: var(--ink);
+  background: var(--sun);
+  transform: translateY(-160%);
+}
+.skip-link:focus { transform: translateY(0); }
+
+.site-header { border-bottom: 1px solid var(--line); background: rgb(252 253 253 / 95%); }
+.header-content, .footer-content { display: flex; align-items: center; justify-content: space-between; gap: 1.25rem; }
+.header-content { min-height: 4.75rem; }
+.wordmark { color: var(--ink); font-family: Arial, Helvetica, sans-serif; font-size: 0.95rem; font-weight: 750; letter-spacing: 0.04em; text-decoration: none; text-transform: uppercase; }
+nav { display: flex; flex-wrap: wrap; gap: 1.15rem; }
+nav a { font-family: Arial, Helvetica, sans-serif; font-size: 0.9rem; font-weight: 700; }
+
+.hero { overflow: hidden; border-bottom: 1px solid var(--line); background: linear-gradient(135deg, #e9f6f5 0%, #fdfbf3 100%); }
+.hero-layout { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(13rem, 0.7fr); align-items: center; gap: clamp(2rem, 7vw, 6rem); padding-block: clamp(4.5rem, 11vw, 8rem); }
+.eyebrow { margin: 0 0 0.75rem; color: var(--accent-dark); font-family: Arial, Helvetica, sans-serif; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.11em; text-transform: uppercase; }
+h1, h2 { margin: 0; color: var(--ink); font-weight: 400; line-height: 1.08; }
+h1 { max-width: 12ch; font-size: clamp(2.8rem, 7vw, 5.6rem); }
+h2 { font-size: clamp(2rem, 4vw, 3.3rem); }
+.lede { max-width: 39rem; margin: 1.5rem 0 0; color: var(--muted-ink); font-size: clamp(1.2rem, 2.3vw, 1.45rem); }
+.app-art { justify-self: center; width: min(100%, 20rem); filter: drop-shadow(var(--shadow)); }
+
+.section { padding-block: clamp(4rem, 9vw, 7rem); }
+.content-grid { display: grid; grid-template-columns: minmax(11rem, 0.62fr) minmax(0, 1.38fr); gap: clamp(2rem, 8vw, 7rem); }
+.prose { max-width: 43rem; }
+.prose p:first-child { margin-top: 0; }
+.prose p { margin-block: 0 1.25rem; }
+.actions { margin-top: 2rem !important; }
+.button { display: inline-block; padding: 0.72rem 1rem; border: 1px solid var(--accent); border-radius: 0.2rem; color: #fff; background: var(--accent); font-family: Arial, Helvetica, sans-serif; font-size: 0.92rem; font-weight: 750; text-decoration: none; }
+.button:hover { color: #fff; background: var(--accent-dark); }
+
+.section-muted { background: var(--mist); }
+.contact-block { max-width: 43rem; }
+.contact-block h2 { margin-bottom: 1rem; }
+.contact-block p { margin-bottom: 0; }
+.site-footer { padding-block: 1.65rem; border-top: 1px solid var(--line); color: var(--muted-ink); font-family: Arial, Helvetica, sans-serif; font-size: 0.82rem; }
+
+.policy-header { background: var(--mist); }
+.policy-header .container { padding-block: clamp(3.5rem, 8vw, 6rem); }
+.policy-header h1 { max-width: 18ch; font-size: clamp(2.6rem, 6vw, 4.6rem); }
+.policy-date { margin: 1.25rem 0 0; color: var(--muted-ink); }
+.policy { width: min(100% - 2.5rem, 45rem); margin-inline: auto; padding-block: clamp(3.5rem, 7vw, 6rem); }
+.policy h2 { margin-top: 2.7rem; font-size: clamp(1.6rem, 3vw, 2.3rem); }
+.policy p { margin-block: 1rem; }
+.policy code { overflow-wrap: anywhere; padding: 0.08rem 0.28rem; background: var(--mist); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.88em; }
+
+@media (max-width: 42rem) {
+  .container, .policy { width: min(100% - 2rem, 68rem); }
+  .header-content, .footer-content { align-items: flex-start; flex-direction: column; justify-content: center; padding-block: 1rem; }
+  .hero-layout, .content-grid { grid-template-columns: 1fr; }
+  .hero-layout { padding-block: 4rem; }
+  .app-art { width: 14rem; }
+}
